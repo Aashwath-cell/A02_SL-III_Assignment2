@@ -1,15 +1,10 @@
 pipeline {
     agent any
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials') 
-        IMAGE_NAME = "aashwath05/studentproject" 
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+        IMAGE_NAME = "aashwath05/studentproject"
     }
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Aashwath-cell/A02_SL-III_Assignment2.git' 
-            }
-        }
         stage('Build Docker Image') {
             steps {
                 script {
